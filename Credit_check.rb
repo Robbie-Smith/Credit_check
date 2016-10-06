@@ -1,5 +1,3 @@
-require 'pry'
-
 class Credit
 
   def initialize(card_number)
@@ -19,7 +17,6 @@ class Credit
   end
 
   def add(card_split)
-    binding.pry
     card_split.map!{|num| num > 9 ? split_num_and_sum(num) : num}
     card_split = card_split.reduce(:+) % 10
     valid(card_split)
